@@ -1,0 +1,36 @@
+/* Custom styles for the currency converter */
+.card-header {
+  background-color: #007bff; /* A shade of bootstrap primary color */
+  color: #fff;
+}
+
+.btn-primary {
+  width: 100%;
+  margin-top: 5%;
+}
+
+/* Responsive design considerations can be added here */
+
+.w-3 {
+  width: 30%;
+}
+
+.m-t-3 {
+  margin-top: 30px;
+}
+
+.m-b-10 {
+  margin-bottom: 50px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.span-w {
+  height: 40px;
+}
+
+label {
+  font-weight: bold;
+}

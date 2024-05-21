@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange QA Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Currency Exchange QA Project</h1>
+    <p>This project aims to create test cases, test them, and generate report files using tools such as JUnit, Mockito, Selenium IDE, and Selenium WebDriver.</p>
+    <h2>Team Members</h2>
+    <ul>
+        <li>1191207 - Mohammed Tahayna</li>
+        <li>1181671 - Suzan Salman</li>
+        <li>1200340 - Mahmoud Duhaidi</li>
+        <li>1191114 - Manal Abo Makho</li>
+    </ul>
+    <h2>Setup</h2>
+    <p>The project is divided into two sections: <code>client/</code> and <code>server/</code>.</p>
+    <h3>Client Folder</h3>
+    <p>The <code>client/</code> folder contains the front-end part of the project:</p>
+    <ul>
+        <li>To run the front-end, use the "Live-server extension on VSCODE". This will initiate a local server to view the front-end part by default on <code>127.0.0.1:5500/client/index.html</code>.</li>
+        <li>(Optional) Use a server to host the front-end part.</li>
+        <li>This section is implemented using HTML5, CSS3, Vanilla JavaScript (ES6+), and Bootstrap 5 for CSS customization.</li>
+    </ul>
+    <h3>Server Folder</h3>
+    <p>The <code>server/</code> folder contains the back-end part and services, including the API:</p>
+    <ul>
+        <li>The backend is implemented in Java, mainly for the use of testing tools such as JUnit and Mockito.</li>
+        <li>The connection between the client-server architecture is using API endpoints, which are implemented in Java using the Spring Boot framework.</li>
+        <li>To run the server, you can use the Spring Boot development server located on <code>127.0.0.1:8080</code>. This can be done by initializing a Spring Boot project using IntelliJ IDEA, the Spring Initializr, or by opening the existing project and then running the <code>QaprojApplication.class</code> main class to run the server.</li>
+        <li>The API endpoints are located in "QaprojApplicationController" controller class: </li><br>
+        <div>
+            <ol>
+                <li>
+                    <b>@POST METHOD convert(@RequestBody ConversionRequest) : ResponseEntity<ConversionResult></ConversionResult></b>
+                        : takes input from front-end and execute convert:
+                        <ul>
+                            <li> fetches data from a real database such as : rate between the two currencies chosen
+                            <li> calculates the rate * amount and returns the converted data From-To </li></li>
+                        </ul>
+                </li>
+                <br>
+                <br>
+                <li>
+                    <b>@GET METHOD getRate(@RequestParam String , @RequestParam String ) : Mono<ResponseEntity<ConvertedRate>></b>
+                        wheic takes the To-From currencies codes and returns the Rate only between them
+                </li>
+            </ol> 
+        </div>
+    </ul>
+
+    <h4>in summary, running the front-end (live-server) and the back-end server using spring boot
+        gives you a simple full-stack Money Exchange project to be used</h4>
+
+<h5>============================================================================================</h5>
+    <h1>TESTING:</h1>
+    <h3> we used two testing methods  to test the web interface and the API methods using:</h3>
+        <ol>
+            <li>Junit</li>
+            <li>Mockito</li>
+            <li> selenium IDE & selenium driver.</li>
+        </ol>
+
+    <h2>step 1-2 :</h2>
+        <h4> to use Junit testing and Test the pre-written tests (under server/qaproj/src/test/java/junitMockito/ ):
+            if you already have installed the dependencies & plugins in the pom.xml file then: (note backend & front-end server should be running)</h4>
+
+        <ol type="a">
+            <li> run the <code>ConversionServiceTest.class</code> to run the tests in the class </li>
+            <li> 	 	
+             a report file was pre-generated for this cases :report file can be alocated in:
+                     <code>../testing Reports/Junit&Mockito/site/surefire-report.html</code></li>
+        </ol>
+
+    <h2>step 3 : </h2>
+    <h4> to use Selenium framework testing and test the pre-written tests ( under:  <code>server/qaproj/src/test/java/selenium/)</code>:</h4>
+    <ol type="A">
+            <li>you can locate a file called "qaproject_MoneyExchange.side" this is a Selenium IDE file 
+    of a pre-existing selenium web tests </li>
+            <li> or run the ExtentReportsTests.class to execute selenium tests and get the generated tests report </li>
+            <li>a selenium extent pre-generated report for this cases can be located under: 
+    ../testing Reports/selenium/testReport.html</li>
+
+    </ol>
+
+    <h4>to test the web application after setup by<a href="./client/index.html"> clicking here </a></h4>
+
+</body>
+</html>

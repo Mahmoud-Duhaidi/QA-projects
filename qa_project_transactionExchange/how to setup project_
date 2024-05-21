@@ -1,0 +1,77 @@
+    								welcome
+
+****\*\*\***** NOTE use the index.html file for better readability
+
+this is Currency Exchange qa project
+the perpose of the project is to make test cases to test then and generate report files
+using tools such as Junit, Mockito, selenium IDE & selenium driver.
+
+project implemented by :
+
+a) 1191207 - Mohammed Tahayna
+b) 1181671 - suzan salman
+c) 1200340 - Mahmoud Duhaidi
+d) 1191114 - Manal Abo Makho
+
+- setup:
+
+this project is divided into two sections
+
+- client/
+- server/
+
+1- client/ folder contains the front-end part of the project:
+
+    a. to run the front-end use "Live-server extension on VSCODE"
+       this will initiate a local server to view the front-end  part by default on 127.0.0.1:5500/client/index.html
+
+     b. (optional) use a server to host the font-end part
+
+     c. this section is implemented using html5,css3, vanilla javascript ( ES6+ ) & bootstrap5 from css customization
+
+
+
+2- server/ folder contains back-end part and services, where the api is included too:
+
+    a. the backend is implemented in java mainly for the use of testing tools such as Junit and Mockito
+
+    b. the connection between the client-server arch is using api endpoints, which are imlemented in java using
+       spring boot framework
+
+    c. to run the server you can use the spring boot development server located on 127.0.0.1:8080
+    	just by initalizing a spring boot project using intellIJ IDE or the spring inintalizer or open the existing project
+    	then running the "QaprojApplication.class" main class to rum  the server
+
+    d. the API endpoints are located in "QaprojApplicationController" controller class
+    	d.1) @POST METHOD convert(@RequestBody ConversionRequest) : ResponseEntity<ConversionResult>
+    		takes input from front-end and execute convert,
+    			1- fetches data from a real database such as : rate between the two currencies chosen
+    			2- calculates the rate * amount and returns the converted data From-To
+
+
+    	d.2) @GET METHOD getRate(@RequestParam String , @RequestParam String ) : Mono<ResponseEntity<ConvertedRate>>
+    		wheic takes the To-From currencies codes and returns the Rate only between them
+
+TESTING:
+
+we used two testing methods to test the web interface and the API methods using:
+1- Junit
+2- Mockito
+3- selenium IDE & selenium driver.
+step 1-2 :
+to use Junit testing and Test the pre-written tests (under server/qaproj/src/test/java/junitMockito/ ):
+if you already have installed the dependencies & plugins in the pom.xml file then: (note backend & front-end server should be running)
+a. run the ConversionServiceTest.class to run the tests in the class
+
+b. a report file was pre-generated for this cases :report file can be alocated in:
+../testing Reports/Junit&Mockito/site/surefire-report.html
+step 3 :
+
+to use Selenium framework testing and test the pre-written tests ( under: server/qaproj/src/test/java/selenium/):
+a. you can locate a file called "qaproject_MoneyExchange.side" this is a Selenium IDE file
+of a pre-existing selenium web tests
+b. or run the ExtentReportsTests.class to execute selenium tests and get the generated tests report
+c. a selenium extent pre-generated report for this cases can be located under:
+../testing Reports/selenium/testReport.html
+=======================================================
+to test the web application after setup by clicking here (./client/index.html)
